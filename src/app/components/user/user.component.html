@@ -1,4 +1,8 @@
-@if (users.length==0) {
+<h3>{{title}}</h3>
+
+<button class="btn btn-primary my-4" [routerLink]="['/users/create']">Crear usuario </button>
+
+@if (users.length == 0) {
   <div class="alert alert-warning">No hay registro para mostrar</div>
 }@else {
 
@@ -28,7 +32,7 @@
             </button>
           </td>
           <td>
-            <button class="btn btn-info -btn-sm" (click)="onSelectedUser(user)">
+            <button class="btn btn-info -btn-sm"  [routerLink]="['/users/edit', user.id]">
               update
             </button>
           </td>
